@@ -48,7 +48,8 @@ The GUI will launch. Enter the pdf topic name you wish to download and location 
 ## Project Structure
 - main.py: The main Python script to run the application.
 - requirements.txt: Lists all the dependencies required to run the application.
-- web/: Contains HTML, css and js files for the GUI.
+- web: Contains HTML, css and js files for the GUI.
+- exe: Contains final output of code in exe form
 
 ## Dependencies
 ### The application requires the following packages, listed in requirements.txt:

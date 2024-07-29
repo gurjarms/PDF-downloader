@@ -20,6 +20,7 @@ Clone the repository:
 ```bash
 git clone https://github.com/gurjarms/PDF-Downloader.git
 cd PDF-Downloader
+cd app
 ```
 ## create a virtual environment
 ```bash

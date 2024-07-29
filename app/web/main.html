@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+      <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>PDF Downloader</title>
+            <script type="text/javascript" src="main.js"></script>
+            <script type="text/javascript" src="/eel.js"></script>
+            <link rel="stylesheet" href="css\bootstrap-grid.css">
+            <link rel="stylesheet" href="css\bootstrap-grid.min.css">
+            <link rel="stylesheet" href="css\bootstrap-grid.rtl.css">
+            <link rel="stylesheet" href="css\bootstrap-grid.rtl.min.css">
+            <link rel="stylesheet" href="css\bootstrap-reboot.css">
+            <link rel="stylesheet" href="css\bootstrap-reboot.min.css">
+            <link rel="stylesheet" href="css\bootstrap-reboot.rtl.css">
+            <link rel="stylesheet" href="css\bootstrap-reboot.rtl.min.css">
+            <link rel="stylesheet" href="css\bootstrap-utilities.css">
+            <link rel="stylesheet" href="css\bootstrap-utilities.min.css">
+            <link rel="stylesheet" href="css\bootstrap-utilities.rtl.css">
+            <link rel="stylesheet" href="css\bootstrap-utilities.rtl.min.css">
+            <link rel="stylesheet" href="css\bootstrap.css">
+            <link rel="stylesheet" href="css\bootstrap.min.css">
+            <link rel="stylesheet" href="css\bootstrap.rtl.css">
+            <link rel="stylesheet" href="css\bootstrap.rtl.min.css">
+
+
+
+
+      </head>
+
+      <body>
+            <center>
+                  <div class="container">
+                        <form id="" onsubmit="search();return false;">
+                              <div class=" mt-2 col col-lg-8 border border-secondary rounded-3 p-2">
+
+                                    <div class="row">
+                                          <div class="col">
+                                                <h1>Extracting PDFs from Google Search </h1>
+                                                <p style="color: darkblue; font-weight:bold;">The successful download of PDFs is contingent upon internet speed</p>
+                                          </div>
+                                    </div>
+
+                                    <div class="row pt-5">
+                                          <div class=" col-sm-3"></div>
+
+                                          <div class="text-end col-sm-6">
+
+                                                <label class="label " for="location">Specify the folder path or location to save downloaded PDFs:</label><br>
+                                                <input required class="form-control" type="text" id="location" placeholder="e.g. - C:\Users\Gurjar\Desktop" name="location">
+
+                                                <p class="text-danger">Ensure the specified folder is empty before proceeding.</p>
+
+
+                                          </div>
+                                          <div class=" col-sm-3"></div>
+
+
+                                    </div>
+                                    <div class="row mt-5">
+                                          <div class=" col-sm-3"></div>
+                                          <div class=" text-end col-sm-6">
+                                                <h3>Enter PDF Topic name </h3>
+
+                                                <input required class="form-control" placeholder="e.g. - Topic name:pdf, another topic name pdf" type="text" id="pdf-name">
+                                                <strong>Enter multiple topic names separated by commas (e.g., 'Topic1 pdf, Topic2 pdf, Topic3 pdf').</strong>
+                                                <br>
+                                                <button type="submit" class="self-align-end btn btn-primary mt-4" id="btn">Download</button>
+                                          </div>
+                                          <div class=" col-sm-3"></div>
+
+                                    </div>
+                              </div>
+
+                        </form>
+                        <center>
+
+                              <div style="display:none; font-family: 'Courier New', Courier, monospace; overflow:scroll;" id="log" class="p-2 mt-3 bg-dark text-light text-end ">
+                                    <h5>Download in Progress......</h5>
+                                    <ol id="log-list">
+
+                                    </ol>
+                              </div>
+
+                        </center>
+                        <center style="width: fit-content; padding-left:8px; padding-right:8px; border-radius:10px; color:white; " class="bg-info ">
+                              <h3 class="mt-5" id="result"></h3>
+                        </center>
+                        <div class="container-fluid mt-5">
+                              <div class="row">
+                                    <div style="display: none;" id="all" class="col">
+                                          <table id="all-link" class="rounded table table-secondary">
+                                                <th>All pdf links</th>
+                                          </table>
+                                    </div>
+                              </div>
+                              <div class="row">
+
+
+                                    <div style="display: none;" id="first" class="col">
+                                          <table id="first-link" class="rounded table table-success">
+                                                <th>downloaded pdf links</th>
+                                          </table>
+                                    </div>
+                              </div>
+
+                              <div class="row">
+                                    <div style="display: none;" id="second" class="col">
+                                          <table id="second-link" class="rounded table table-danger">
+                                                <th>Not donloaded pdf links</th>
+                                          </table>
+                                    </div>
+                              </div>
+
+
+                        </div>
+                  </div>
+
+            </center>
+            <script>
+
+                  getData()
+                  eel.expose(update_status);
+
+            </script>
+
+      </body>
+
+</html>
